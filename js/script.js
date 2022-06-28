@@ -72,8 +72,10 @@ function textToMorse(text) {
     result.textContent = "";
 
     [...text.target.value].forEach(c => {  
-        if (morseCode.has(c)) {
-            result.textContent += morseCode.get(c.toLowerCase());
+        const ch = c.toLowerCase();
+
+        if (morseCode.has(ch)) {
+            result.textContent += morseCode.get(ch);
             result.textContent += " ";        
         } else {
             text.target.value = text.target.value.slice(0, text.target.value.length - 1); 
